@@ -1,0 +1,32 @@
+.user {
+  /* border: 2px solid black; */
+}
+
+
+.table {
+ 
+  width: 100%;
+  margin-top: 20px;
+}
+
+th{
+  text-align: left;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+
+tr{
+    height: 30px;
+}
+
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+.deleteBtn{
+  /* padding-left: 10px; */
+  font-size: 20px;
+  cursor: pointer;
+}
