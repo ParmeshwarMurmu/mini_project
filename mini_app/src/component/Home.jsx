@@ -4,11 +4,14 @@ import { ViewModal } from "./ViewModal";
 import style from "../CSS/Login.module.css";
 import { appContent } from "../ContextApi/ContextApi";
 import { ButtonComponent } from "./ButtonComponent";
+import { Navbar } from "../Routes/Navbar";
+import { InputComponent } from "./InputComponent";
 
 export const Home = () => {
   const [data, setData] = useState([]);
   const [productId, setProductId] = useState(null);
-  const { isOpen, setIsOpen } = useContext(appContent);
+  const { isOpen, setIsOpen, setTotalCartItems } = useContext(appContent);
+  const [cart, setCart] = useState( JSON.parse(localStorage.getItem("Cart"))|| [])
 
   const handleData = () => {
     fetch("https://dummyjson.com/products")
@@ -21,25 +24,42 @@ export const Home = () => {
 
 
 
-  const handleModal = (id) => {
-    console.log("Id", id);
-    setProductId(id);
-    setIsOpen(true);
-  };
+  // const handleModal = (id) => {
+  //   console.log("Id", id);
+  //   setProductId(id);
+  //   setIsOpen(true);
+  // };
 
   useEffect(() => {
     handleData();
   }, []);
 
-  console.log(data);
+
+  useEffect(()=>{
+    localStorage.setItem("Cart", JSON.stringify(cart));
+    setTotalCartItems(cart.length)
+  }, [cart])
+  
+
+  console.log("cart", cart);
 
   return (
     <div className={style.cont}>
+
+      <div>
+        <Navbar />
+      </div>
+
       <div
         style={{ display: isOpen ? "block" : "none" }}
         className={style.singleProduct}
       >
-        <ViewModal productId={productId} />
+        <ViewModal 
+        productId={productId}
+        size={"sm"}
+        scroll = {true}
+
+         />
       </div>
       <div className={style.homeContainer}>
         {data.map((element) => (
@@ -58,17 +78,8 @@ export const Home = () => {
 
             <div className={style.viewAndAddtocartBtnContainer}>
 
-              {/* <div>
-                <button
-                  onClick={() => {
-                    handleModal(element.id);
-                  }}
-                >
-                  View
-                </button>
-              </div> */}
-
-              <ButtonComponent label={"View"}  
+              <ButtonComponent label={"View"} 
+               id={element.id} 
                buttonHandler = {(id)=> {
                 setProductId(id);
                 setIsOpen(true)
@@ -78,19 +89,14 @@ export const Home = () => {
 
 
               <ButtonComponent label={"Add To Cart"}
-              buttonHandler = {(id) =>{
-                
+              id={element.id}
+              buttonHandler = {(id) =>{       
+                setCart([...cart, id]);
+                alert("Product Added To Cart")
               }}
                
                />
 
-              {/* <div>
-              <button
-                
-              >
-                Add To Cart
-              </button>
-              </div> */}
 
             </div>
           </div>

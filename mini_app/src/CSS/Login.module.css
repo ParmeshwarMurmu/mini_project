@@ -34,23 +34,23 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
-
+  padding-top: 60px;
 }
 
-h3 ,p{
-    padding: 0px;
-    margin: 0px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+h3,
+p {
+  padding: 0px;
+  margin: 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h3{
+h3 {
   font-size: 16px;
 }
 
-
-p{
-    font-size: 12px;
-    margin-bottom: 2px;
+p {
+  font-size: 12px;
+  margin-bottom: 2px;
 }
 
 .homeContainer > div {
@@ -83,12 +83,12 @@ p{
 .mainContent {
   position: fixed;
   top: 20px;
-  left: 70px;
+  /* left: 70px; */
   /* border: 2px solid red; */
   padding: 10px;
   z-index: 1;
-  height: 90vh;
-  width: 190vh;
+  /* height: 90vh;
+  width: 190vh; */
   background-color: rgb(255, 255, 255);
   overflow: auto;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -113,21 +113,88 @@ p{
 }
 
 .btnContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+}
+
+.cont {
+  /* padding-top: 20px; */
+  /* cursor: pointer; */
+}
+
+.viewAndAddtocartBtnContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content > div:nth-child(3) {
+  margin-top: 10px;
+  align-items: flex-end;
+}
+
+.navbar {
+  height: 30px;
   position: fixed;
+  z-index: 1;
+  padding: 10px;
+  width: 100%;
+  background-color: aliceblue;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.profile {
+  height: 30px;
+  width: 30px;
+  border: 1px solid black;
+  background: #b8cfea;
+  border-radius: 100%;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.navbarContent {
+  display: flex;
+  justify-content: space-between;
+  /* padding: 10px; */
+}
+
+.dropDown{
+  /* border: 2px solid red; */
+  position: absolute;
+  right: 20px;
+  background: #b8cfea;
+  border: 1px solid black;
+  /* border-bottom: none; */
+  padding: 0px;
+  margin: 0px;
+}
+
+.dropDown > p {
+  padding: 5px;
+  /* border-bottom: 1px solid black; */
 }
 
 
-.cont{
-    padding-top: 20px;
+.dropDown > p:hover{
+  background: #e2ecf7;
+  cursor: pointer;
 }
 
-.viewAndAddtocartBtnContainer{
-    display: flex;
-    justify-content: space-between;
+
+/* Cart Page CSS */
+
+.cartItemContent{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }
 
-.content > div:nth-child(3){
-    border: 2px solid red;
-    align-items: flex-end;
 
-}
+/* cartItemContainer */

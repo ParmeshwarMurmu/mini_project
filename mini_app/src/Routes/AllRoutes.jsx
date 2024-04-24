@@ -5,6 +5,7 @@ import { Register } from '../component/Register'
 import { Home } from '../component/Home'
 import { NotFound } from '../component/NotFound'
 import { PrivateRoute } from './PrivateRoute'
+import { Cart } from '../component/Cart'
 
 export const AllRoutes = () => {
 
@@ -17,6 +18,7 @@ export const AllRoutes = () => {
         } />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<NotFound />} />
     </Routes>
   )
