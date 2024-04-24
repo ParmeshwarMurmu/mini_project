@@ -127,6 +127,7 @@ p {
 .viewAndAddtocartBtnContainer {
   display: flex;
   justify-content: space-between;
+  margin-top: 10px;
 }
 
 .content > div:nth-child(3) {
@@ -171,6 +172,7 @@ p {
   position: absolute;
   right: 20px;
   background: #b8cfea;
+  /* border: 1px solid rgb(239, 81, 81); */
   border: 1px solid black;
   /* border-bottom: none; */
   padding: 0px;
@@ -193,8 +195,82 @@ p {
 
 .cartItemContent{
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  width: 70%;
+  gap: 20px;
+}
+
+.billingDetails{
+  width: 30%;
+  margin-left: 50px;
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.billingDetails > div {
+  padding: 10px;
 }
 
 
-/* cartItemContainer */
+.quantityContainer{
+  display: flex;
+}
+
+
+.cartItemContainer{
+  display: flex;
+}
+
+h5{
+  padding: 0px;
+  margin: 0px;
+}
+
+.cartTitle{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+}
+
+
+.increaseQuantityBtn{
+  background-color: rgb(21, 127, 21);
+  border: none;
+  border-radius: 5px;
+}
+
+
+
+.increaseQuantityBtn:hover{
+  background-color: rgb(85, 183, 85);
+}
+
+.decreaseQuantityBtn{
+  background-color: rgb(219, 42, 42);
+  border: none;
+  border-radius: 5px;
+}
+
+.decreaseQuantityBtn:hover{
+  background-color: rgb(231, 92, 92);
+  border: none;
+}
+
+
+.checkoutBtn{
+  padding: 5px;
+  background-color: #FFA500;
+  border: none;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.checkoutBtn:hover{
+  background-color: #fbc663;
+  color: black;
+}
