@@ -36,7 +36,9 @@ export const Navbar = memo(() => {
         <div style={{display:"flex", justifyContent: "center"}}>
 
           <div style={{paddingTop: "4px", marginRight: "10px"}}>
+            <Link to={'/cart'}>
             <FaShoppingCart style={{marginRight: "2px"}} />
+            </Link>
             {totalCartItems}
 
           </div>
